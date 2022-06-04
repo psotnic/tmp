@@ -18,6 +18,7 @@ minimal: false             # use a dark header
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: "/", title: "About"}
   - {file: "rfc1459.html"}  
+  - {file: "rfc2810.html"}  
   - {url: "/credits/", title: "Credits"}
   - {url: "/contact/", title: "Contact"}
   
