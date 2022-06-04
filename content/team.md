@@ -1,6 +1,6 @@
 ---
 title: "Team"
-permalink: "/team"
+permalink: "/team/"
 layout: page
 ---
 | Name | Email Address | Country |
