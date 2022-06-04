@@ -1,6 +1,6 @@
 ---
 title: "Channels"
-permalink: "/channels"
+permalink: "/channels/"
 layout: page
 ---
 | Channel | Description |
