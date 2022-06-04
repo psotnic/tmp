@@ -43,4 +43,5 @@ No one can hinder you from chatting if you really want to. The less resistance o
 <br>
 Original text by: Kasi<br>
 Original URL: http://home.snafu.de/kl/takeovers.html<br>
+Maintained by: IRCnet.com Team<br>
 Last updated: 24.02.2002<br>
