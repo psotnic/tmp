@@ -1,6 +1,6 @@
 ---
 title: "Servers"
-permalink: "/servers"
+permalink: "/servers/"
 layout: page
 ---
 Connect to server **irc.ircnet.com** on port 6667 (SSL: **ssl.ircnet.io **on port 6697). You will be distributed to an open server which allows connections from all over the world.
