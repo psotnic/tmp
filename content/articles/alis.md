@@ -3,7 +3,7 @@ layout: page
 permalink: "/articles/alis"
 title: "Alis"
 ---
-Alis (Advanced List Service) is a service to list IRC channels. It replaces the deprecated /LIST command.
+Alis (Advanced List Service) is a service to list IRC channels. It replaces the deprecated ```/LIST``` command.
 ```
 /SQUERY ALIS HELP LIST
 ```
