@@ -17,8 +17,14 @@ minimal: false             # use a dark header
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: "/", title: "Home"}
+  - {url: "/servers/", title: "Servers"}
+  - {url: "/clients/", title: "Clients"}
   - {url: "/articles/", title: "Articles"}
-  
+  - {url: "/channels/", title: "Channels"}
+  - {url: "https://ircnet.chat/", title: "Webchat"}
+  - {url: "/team", title: "Team"}
+  - {url: "/links", title: "Links"}
+
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:info@psotnic.com"}
   - {title: Github, icon: github, url: "https://github.com/psotnic/psotnic"}
