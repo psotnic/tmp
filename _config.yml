@@ -1,4 +1,4 @@
-title: "psotnic"
+title: "IRCnet.com"
 author: ""
 description: "Made with <b style=\"color: #f45;\">&lt;3</b>"
 permalink: /:title/
@@ -26,8 +26,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: "/links", title: "Links"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:info@psotnic.com"}
-  - {title: Github, icon: github, url: "https://github.com/psotnic/psotnic"}
+  - {title: Github, icon: github, url: "https://github.com/ircnet-com"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
