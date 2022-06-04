@@ -16,11 +16,8 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {url: "/", title: "About"}
-  - {file: "rfc1459.html"}  
-  - {file: "rfc2810.html"}  
-  - {url: "/credits/", title: "Credits"}
-  - {url: "/contact/", title: "Contact"}
+  - {url: "/", title: "Home"}
+  - {url: "/articles/", title: "Articles"}
   
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:info@psotnic.com"}
