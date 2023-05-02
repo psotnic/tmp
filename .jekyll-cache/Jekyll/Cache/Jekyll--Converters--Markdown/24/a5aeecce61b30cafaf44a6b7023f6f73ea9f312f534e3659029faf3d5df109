@@ -1,0 +1,57 @@
+I"�<p><strong>Warning: this document is outdated</strong></p>
+
+<h2 id="goal">Goal</h2>
+<p>As we all know, #channels are subject to collisions which have very annoying side effects. Channel Delay is intended to prevent the collisions, but is far from being perfect.</p>
+
+<p>These new channels will make collisions extremely unlikely.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>In order to make collisions impossible, the channel name is assiocated to a unique ID. The pair (name , ID) will thus be unique as well.</p>
+
+<p>The channel real name is built by concatenating the ID and the short name, for example, channel <code class="language-plaintext highlighter-rouge">!foo</code> might be <code class="language-plaintext highlighter-rouge">!2B4dfoo</code>. The ID has a constant length which makes it easy to separate it from the actual “friendly” name.</p>
+
+<p>The channel creation must be requested. For example to create a the new channel foo, one must try to join <code class="language-plaintext highlighter-rouge">!!foo</code>.</p>
+
+<p>In addition to a unique name, these channels obey to soe new simple rules:</p>
+
+<ul>
+  <li>It is not possible to create a channel if one with the same short name (but different ID) already exists has split recently (e.g. the channel delay was set and hasn’t expired. see definition below).</li>
+  <li>It is possible to join a channel which has split recently (if the modes allow it). In this case, the user does not get oped. (Note that this differs from #channels which get locked in such a case, until the Channel Delay expires then allowing a user to re-create it, gaining chanop status).</li>
+  <li>If only one channel <code class="language-plaintext highlighter-rouge">!foo</code> exists, it can be joined by giving the short name only. The JOIN command is the only one accepting shortnames for the channels</li>
+  <li>If several channels have the same short name, but different ID, a user can choose to join any of them by specifying the ID.</li>
+  <li>If a channel becomes opless, and remains opless long enough for the Opless Delay to expire, all the channel members will be optionnally oped.</li>
+  <li>The channel delay duration is longer (60m) than for #channels (15m). This is necessary to avoid several channels having the same short name (but different ID) as much as possible.
+The channel delay is set when any member splits.
+The opless delay is set whenever a chanop member leaves the channel.</li>
+</ul>
+
+<h2 id="new-modes">New modes</h2>
+<p>As channel collisions are eliminated, it is possible to enhance the mode system.</p>
+
+<h3 id="general-modes">general modes</h3>
+<h4 id="-r">+ r</h4>
+<p>reop mode, if the channel becomes opless for long enough, servers will re-op users in the channel. Note that not setting this mode can be used to create `modeless’ channels (such as +channels) but with specific characteristics. (anonymous, secret…)</p>
+
+<p>Reoping is done randomly by a random server. While it may sound like loading a channel with many clones increases greatly the chances of catching the reop, the randomization is done in a way which does not favor clones at all.</p>
+
+<h4 id="a">+a</h4>
+<p>This is anonymous mode, if toggled by the owner nobody can see who is talking or joining.</p>
+
+<p>All you see is anonymous@blaha.com has joined</p>
+
+<p>Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>06:46 ## Join !3B4OWchat: anonymous (anonymous@anonymous.)
+</code></pre></div></div>
+<p>You will see that when someone parts too.</p>
+
+<h3 id="user-modes">user modes</h3>
+<h4 id="o">+O</h4>
+<p>This mode is given to the creator of the channel by the server, it cannot be passed or gained after the channel was created. The creator is the only person able to set/unset r modes, and set (but not unset) +a.
+<br />
+<br />
+<br />
+Original text by: Christophe Kalt<br />
+Original URL: http://www.stealth.net/~kalt/irc/channel.html<br />
+Maintained by: IRCnet.com Team<br />
+Last updated: 24.02.2002<br /></p>
+:ET

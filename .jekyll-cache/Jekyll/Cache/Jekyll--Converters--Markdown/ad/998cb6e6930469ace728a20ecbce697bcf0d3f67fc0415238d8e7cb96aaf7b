@@ -1,0 +1,40 @@
+I"*
+<p>In ircd 2.11.0 the Reop-Mode has been introduced to IRCnet. When a channel becomes opless, one of the users matching the added hostmasks will be opped after a delay.</p>
+
+<p>Like ban, invite and exception  list, the reop list contains hostmasks in format <code class="language-plaintext highlighter-rouge">nick!ident@host.</code></p>
+
+<p>Retrieve the reop list:
+<code class="language-plaintext highlighter-rouge">MODE #channel R</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:irc.example.com 344 nick #channel *!user1@ircnet.com
+:irc.example.com 344 nick #channel *!user2@ircnet.com
+:irc.example.com 345 nick #channel :End of Channel Reop List
+</code></pre></div></div>
+
+<p>Add reop entries:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MODE #channel +R *!user@ircnet.com
+</code></pre></div></div>
+
+<p>Remove reop entries:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MODE #channel -R *!user@ircnet.com
+</code></pre></div></div>
+
+<p>When the channel became opless, reop will be enforced after 90 minutes:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:irc.example.com NOTICE #channel :Enforcing channel mode +R (166)
+:irc.example.com MODE #channel +o nick
+</code></pre></div></div>
+
+<h2 id="hints">Hints</h2>
+<ul>
+  <li>Keep your reop entries up to date (domain expired? shell account closed?)</li>
+  <li>Be careful with wildcards. Never use wildcards like <code class="language-plaintext highlighter-rouge">*!user@151.141.187.*</code> because they can be spoofed easily, e.g. <code class="language-plaintext highlighter-rouge">*!user@151.141.187.ircnet.com</code>. Use CIDR notation instead: <code class="language-plaintext highlighter-rouge">*!user@151.141.187.0/24</code>.</li>
+  <li>Reop entries can be restricted to countries by using ISO-3166-1 country codes. E.g. <code class="language-plaintext highlighter-rouge">276*!user@ircnet.com</code> will reop only users on *.DE IRCnet servers.</li>
+  <li>If the channel is opless, users matching the reoplist are allowed to join the channel by overriding the channel limit.</li>
+  <li>If the channel is empty, reops will get lost, like all other channel information</li>
+  <li>If the server is currently in split-mode (maybe even due to misconfiguration), you will not get opped. To test that check if you get op when you join a non-existing channel.</li>
+</ul>
+
+<p><br /><br />
+© IRCnet.com</p>
+
+:ET
